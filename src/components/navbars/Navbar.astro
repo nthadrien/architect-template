@@ -1,0 +1,91 @@
+---
+import Brand from "@components/Brand.astro";
+---
+<!-- 
+<nav class="navbar navbar-expand-md">
+
+    <section class="container-xl">
+
+      <Brand/>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <aside class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="navbarOffcanvasLabel">
+                    <Brand />
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body gap-2">
+
+                
+                <div class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-3 text-capitalize">
+                    <a href="/#" class="nav-item">Home</a>
+                    <a href="/en/about-us" class="nav-item">About US</a>
+                    <a href="/en/about-us#testimonials" class="nav-item">Testimonials</a>
+                    <a href="/en/projects" class="nav-item">Projects</a>
+                    <a href="/en/blog" class="nav-item">Blog </a>
+                    <a href="/en/contact-us" class="btn btn-primary">Book a Call</a>
+                </div>
+
+            </div>
+        </aside>
+
+
+    </section>
+    
+</nav> -->
+
+
+
+<nav class="navbar navbar-expand-lg fixed-top top-0 bg-body"> 
+
+    <div class="container-xl"> 
+        
+        <Brand />    
+
+        <aside class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+
+            <div class="offcanvas-header">
+                <h3 class="offcanvas-title" id="navbarOffcanvasLabel"></h3>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body gap-2">
+
+                <section class="navbar-nav align-items-md-center justify-content-lg-end flex-grow-1 gap-3 gap-lg-4 text-capitalize p-3 p-md-1 px-lg-4">
+                    
+                    <a class="nav-item" href="/en/">Home</a>
+                    <a href="/en/about-us">About</a>
+                    <a class="nav-item" href="/en/projects">Projects</a>
+                    <a href="/en/services">Services</a>
+                    <a href="/en/blog">Blog</a>
+    
+                </section>
+
+            </div>
+
+        </aside>
+
+
+        <aside class="d-flex gap-2 align-items-center">
+
+            <a href="/en/contact-us" class="fw-bold btn btn-primary">
+                <i class="bi bi-telephone-fill" /> 
+                
+            </a>
+
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+       </aside>
+
+    </div> 
+</nav>

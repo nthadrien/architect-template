@@ -1,0 +1,28 @@
+---
+
+
+const images = [
+    "house3.png",
+    "house5.png",
+    "house1.webp",
+    "house2.png"
+];
+
+const sixe = images.length;
+
+const randomImg  = images[ Math.floor(Math.random() * sixe )]
+---
+<div class="position-relative p-1 w-100">
+
+    <img style="min-height: 22rem;" class="w-100 h-100 opacity-75 object-fit-contain" src={`/pages/${randomImg}`} alt=""/>
+
+    <div style="z-index: 1;" class="p-2">
+
+        <h3 class="font-monospace fw-bolder mb-4">Project Name</h3>
+        <a href="/en/projects/showcase" class="small">
+            Veniam temporibus sunt, suscipit voluptatibus voluptate ut voluptas aliquid ipsa corrupti, quia!
+        </a>
+        
+    </div>
+    
+</div>

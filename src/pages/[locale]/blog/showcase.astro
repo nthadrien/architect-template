@@ -1,0 +1,106 @@
+---
+import Socials from "@components/tools/socials.astro";
+import Newsletter from "@components/forms/Newsletter.astro";
+import Layout from "@layouts/BlogLayout.astro";
+import { available_languages } from "@locale/utils";
+import type { GetStaticPaths } from "astro";
+import BlogCard from "@components/cards/BlogCard.astro";
+
+export const getStaticPaths = (() => {
+    const locales = available_languages
+
+    return locales.map( locale => ({
+        params: { locale }
+    }));
+}) satisfies GetStaticPaths; 
+
+const page_seo = {
+	title: "BIG BOLD BLOG TITLE FOR THIS SECTION WITH A LOT OF TEXT",
+	description: "template",
+	keywords: ["architect","template"],
+    img: "/pages/house2.png",
+    text: "blog showcase text - JAN 12, 2026 . 2 min Read",
+    subtext: "blog showcase subtext if any to fill in details",
+}
+---
+
+<Layout {...page_seo}>
+   
+
+    <main class="">
+
+        <p class="text-muted">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro alias ut reiciendis, officiis quae animi sequi. Eligendi molestias quidem rerum vitae quia ducimus alias magnam ipsa cumque voluptas? Doloribus, quod.
+        </p>
+
+        <img loading="lazy" class="w-100 h-auto ratio ratio16x9 object-fit-cover rounded-2 mb-2" src="/" alt="" />
+
+        <div id="content" class="lh-lg mb-3">
+
+
+            <h3>Dicta veniam eveniet minima repellendus commodi distinctio error? Totam?</h3>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae facilis aut adipisci vitae quae error! Reiciendis doloremque quaerat, enim libero quasi reprehenderit, qui itaque officia ex eum deserunt omnis. Numquam!
+            </p>
+
+            <h4>Sit amet consectetur adipisicing elit</h4>
+
+            <ul>
+                <li>consectetur adipisicing elit. Molestiae facilis aut adipisci vitae quae error! Reiciendis doloremque quaerat, enim libero quasi reprehenderit</li>
+                <li>qui itaque officia ex eum deserunt omnis.</li>
+            </ul>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, minus rerum? Nostrum, repudiandae. Fuga quis temporibus eius corrupti voluptatum fugit, nesciunt ipsam provident quam ipsum quia unde, in consequatur magni!
+            </p>
+
+
+            <img class="my-3" src="/public/pages/house1.webp" alt="" />
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus aliquid autem dicta exercitationem ab tempore quae repellendus accusamus dolore, rem necessitatibus quidem, maxime perferendis quas dolorem possimus nulla nihil. Maxime.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, veritatis blanditiis officiis dicta, quia exercitationem deleniti iste hic ducimus impedit amet excepturi earum tenetur! Harum quod est doloremque! Quo, sed.
+            </p>
+        </div>
+
+
+        <section class="py-4 my-3">
+
+            <div class="nav justify-content-between my-3">
+
+                <h5>Related posts</h5>
+
+                <a id="" href="/en/blog" class="fw-semibold">
+                    <i class="bi bi-arrow-left me-2" /> View all posts
+                </a>
+
+            </div>
+            
+
+            <div class="d-flex gap-2 overflow-hidden">
+                {[1,2,3,4,5].map( item => <div class="flex-shrink-0 p-2">
+                    <BlogCard  img={false} />
+                </div>)}
+
+            </div>
+        </section>
+
+
+        <div class="p-lg-5 p-3 bg-body-tertiary bg-gradient nav gap-3 gap-lg-3 rounded-3 w-lg-75">
+
+            <img height="64" width="64" src="https://placehold.net/avatar.png" class="flex-shrink-0" alt="author-pic">
+
+            <p class="col-md-8 col-lg-10">
+                <strong class="fs-4">Author Name</strong> <br/>
+                Author Bio: Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Libero, deserunt eligendi modi dicta sit provident reiciendis.<br/>
+                <a class="text-primary" href="/en/blog">see more author post</a>
+            </p>
+
+        </div>
+        
+    </main>
+
+    
+</Layout>

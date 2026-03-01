@@ -1,0 +1,115 @@
+---
+const partners_list = [
+  {
+    name: "Google",
+    logo: "/logos/google.svg",
+    url: "https://www.google.com",
+  },
+  {
+    name: "Microsoft",
+    logo: "data:image/jpeg;base64,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",
+    url: "https://www.microsoft.com",
+  },
+  {
+    name: "Amazon",
+    logo: "/logos/amazon.svg",
+    url: "https://www.amazon.com",
+  },
+  {
+    name: "Meta",
+    logo: "/logos/meta.svg",
+    url: "https://www.meta.com",
+  },
+  {
+    name: "Apple",
+    logo: "/logos/apple.svg",
+    url: "https://www.apple.com",
+  },
+  {
+    name: "Netflix",
+    logo: "/logos/netflix.svg",
+    url: "https://www.netflix.com",
+  },
+  {
+    name: "Spotify",
+    logo: "/logos/spotify.svg",
+    url: "https://www.spotify.com",
+  },
+  {
+    name: "Adobe",
+    logo: "/logos/adobe.svg",
+    url: "https://www.adobe.com",
+  },
+  {
+    name: "Shopify",
+    logo: "/logos/shopify.svg",
+    url: "https://www.shopify.com",
+  },
+  {
+    name: "Stripe",
+    logo: "/logos/stripe.svg",
+    url: "https://www.stripe.com",
+  },
+];
+
+const leno = partners_list.length;
+---
+
+<section class="container mx-auto my-4 py-4">
+  <h3 class="fw-bold mb-4 text-end">Trusted Partners</h3>
+
+  <div class="overflow-x-auto hide-scrollbar my-4">
+    <div id="slider" class="d-flex py-4" id="track">
+      <!-- Original Items -->
+      {
+        partners_list.map((item) => (
+          <a
+            href={item.url}
+            style="min-width: 148px;"
+            class="d-flex flex-column justify-content-evenly align-items-center flex-shrink-0"
+          >
+            <img
+              src="https://via.placeholder.com/200x80?text=Partner+1"
+              alt="Partner 1"
+            />
+            <strong>{item.name}</strong>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style define:vars={{ leno }}>
+  #slider {
+    animation: sliding-it 17s ease-in 1s infinite forwards;
+  }
+
+  #slider:hover {
+    animation-play-state: paused;
+  }
+
+  #slider img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  #slider a:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.5);
+    transition: all 0.4s ease;
+  }
+
+  @keyframes sliding-it {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(var(--leno) * -65px));
+    }
+  }
+</style>

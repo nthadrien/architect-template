@@ -1,0 +1,13 @@
+---
+
+const patho = Astro.url;
+
+const arrows = patho.pathname.split("/").filter( its => its !== "" ); 
+---
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb text-capitalize">
+      {arrows.map( item => <li class="breadcrumb-item active" aria-current="page">{item}</li>)}
+    </ol>
+</nav>

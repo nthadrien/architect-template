@@ -1,0 +1,22 @@
+
+
+<section class="container d-flex gap-2 justify-content-between p-3 text-md">
+
+    <span>
+        Showing 1 to 9 out of 17 posts
+    </span>
+
+
+    <div class="d-flex align-items-center rounded-2 bg-body-tertiary">
+        <button class="btn">
+            <i class="bi bi-arrow-left-short" />
+        </button>
+        <span class="vr" />
+        {[1,2,3,4].map( item => <button class={`btn rounded-0 ${item == 1 && "btn-primary"}`}>{item}</button>)}
+        <span class="vr" />
+        <button class="btn">
+            <i class="bi bi-arrow-right-short" />
+        </button>
+    </div>
+
+</section>

@@ -1,0 +1,40 @@
+---
+import BlogCard from "@components/cards/BlogCard.astro";
+import IndexShortHeader from "@components/headers/IndexShortHeader.astro";
+import Breadcrumb from "@components/tools/Breadcrumb.astro";
+import Pagination from "@components/tools/Pagination.astro";
+import Layout from "@layouts/Layout.astro";
+import { available_languages } from "@locale/utils";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (() => {
+    const locales = available_languages
+
+    return locales.map( locale => ({
+        params: { locale }
+    }));
+}) satisfies GetStaticPaths; 
+
+const page_seo = {
+	title: "blog",
+	description: "template",
+	keywords: ["architect","template"]
+}
+---
+
+<Layout {...page_seo}>
+
+
+    <IndexShortHeader pgTitle="Blog" center_text={true} subtext="Insights & Industry updates or changes." />
+
+    <ul class="container row row-cols-1 row-cols-lg-3 p-2 list-unstyled mx-auto">
+
+        {[1,2,3,4,5,6,7,8,9].map( item => <li class="col p-2 p-lg-4">
+            <BlogCard />
+        </li>)}
+    </ul>
+
+    <Pagination />
+
+    
+</Layout>

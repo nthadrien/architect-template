@@ -1,0 +1,76 @@
+---
+import Brand from "@components/Brand.astro";
+import Socials from "@components/tools/socials.astro";
+import BaseFooter from "./BaseFooter.astro";
+---
+
+
+<footer class="py-5 px-2 d-flex flex-column gap-4 bg-body-tertiary">
+
+
+    <section class="container-xl mx-auto row justify-content-between">
+
+
+        <aside class="col-lg-4 mb-4">
+
+            <div class="mb-3">
+                <Brand />
+            </div>
+
+            <div class="mb-5">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Quia, illo eum quidem doloribus voluptates nostrum suscipit eveniet!
+            </div>
+
+            <h5 class="mb-4 font-bold">Connect with us:</h5>
+
+            <Socials />
+
+        </aside>
+
+
+        <aside class="col-lg-6 mb-4">
+
+            <h5 class="fw-bold mb-4 mb-lg-5">Quick links</h5>
+
+
+            <div class="row g-3 justify-content-between">
+
+                <div class="col-6 col-md-4 d-flex flex-column gap-2">
+
+                    <a>Home</a>
+                    <a>Services</a>
+                    <a>Work</a>
+                    <a>Process</a>
+                    <a>About Us</a>
+
+                </div>
+
+                <div class="col-6 col-md-4 d-flex flex-column gap-2">
+                    <a>Press</a>
+                    <a>Blog</a>
+                    <a>Contact</a>
+                    <a>Support</a>
+                    <a>Privacy</a>
+                </div>
+
+
+                <div class="col-6 col-md-4 d-flex flex-column gap-2">
+                    <a href="">Yaounde, Mfouda,</a>
+                    <a href="">Cabinet@gmail.com</a>
+                    <a href="">(+237) 6XX-XXX-XXX </a>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <div class="container-xl mx-auto opacity-50">
+        <hr class="w-lg-75" />
+    </div>
+
+    <BaseFooter />
+</footer>

@@ -1,0 +1,10 @@
+---
+import { available_languages } from '@locale/utils';
+---
+<ul>
+  {Object.entries(available_languages).map(([lang, label]) => (
+    <li>
+      <a href={`/${lang}/`}>{label}</a>
+    </li>
+  ))}
+</ul>

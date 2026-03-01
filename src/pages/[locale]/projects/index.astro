@@ -1,0 +1,126 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { available_languages } from "@locale/utils";
+import type { GetStaticPaths } from "astro";
+import IndexHeader from "@components/headers/IndexHeader.astro";
+
+import ArticleCard from "@components/cards/ArticleCard.astro";
+import Pagination from "@components/tools/Pagination.astro";
+import Newsletter from "@components/forms/Newsletter.astro";
+import ProjectCard from "@components/cards/ProjectCard.astro";
+
+export const getStaticPaths = (() => {
+    const locales = available_languages
+
+    return locales.map( locale => ({
+        params: { locale }
+    }));
+}) satisfies GetStaticPaths; 
+
+const page_seo = {
+	title: "our projects",
+	description: "template",
+	keywords: ["architect","template"]
+}
+---
+
+<Layout {...page_seo}>
+
+    <IndexHeader
+        pgTitle="Our projects"
+        center_text={true}
+        text="The way to success is under construction."
+    />
+
+    <nav slot="side-section" class="pt-4">
+
+        <aside class="mb-3">
+
+            <h4 class="mb-3">Tags</h4>
+
+            <ul class="nav gap-1 gap-lg-2">
+                {["artistic","reinnovations","design","consults","masterpiece","educational","trendy","Research"].map( item => <li class="btn btn-sm p-1 text-capitalize btn-outline-secondary rounded-0">{item}</li>)}
+            </ul>
+
+        </aside>
+
+        <aside class="rounded-3 border p-2">
+            <Newsletter />
+        </aside>
+
+
+
+    </nav>
+
+    <ul class="container nav nav-pills my-4 py-4 px-2 mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Architecture</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Design</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Consults</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Others</a>
+        </li>
+    </ul>
+
+
+
+    <div class="container mx-auto row g-2" style="position: relative;"> 
+
+        <div class="col-sm-6 col-lg-4">
+            <ProjectCard />
+        </div>
+
+
+        <div class="col-sm-6 col-lg-4">
+            <ProjectCard />
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+            <ProjectCard />
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+            <ProjectCard />
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+            <ProjectCard />
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+            <ProjectCard />
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+            <ProjectCard />
+        </div>
+
+
+        <div class="col-sm-6 col-lg-4">
+            <ProjectCard />
+        </div>
+
+    <section class="container my-3 py-3 nav justify-content-between mx-auto">
+
+        <button class="btn btn-sm btn-outline-secondary">Prev</button>
+
+
+        <span>
+            {[1,2,3,4,5].map( item => <button class={`btn btn-sm active mx-1 ${item == 1 && "btn-primary"}`}>
+                {item}
+            </button>)}
+        </span>
+
+        <button class="btn btn-sm btn-outline-primary">Next</button>
+
+    </section>
+    
+</Layout>
+
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+  

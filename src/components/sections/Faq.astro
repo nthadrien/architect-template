@@ -1,0 +1,23 @@
+<section class="container mx-auto row g-3 py-4 my-4 justify-content-between">
+
+    <aside class="col-12 col-lg-5">
+        <small class="text-primary">F . A . Q</small>
+        <h4 class="fw-bold mb-3">Frequently Asked Questions</h4>
+
+        <p class="mb-3 text-justify">
+            Have a different question and can’t find the answer you’re looking for? Reach out to our support team by sending us an email and we’ll get back to you as soon as we can.
+        </p>
+    </aside>
+
+    <aside class="col-12 col-lg-6">
+        {[2,3,4,5,6].map(item => <details name="faq" class="border-bottom">
+            <summary class="fw-semibold p-2 rounded-2 mb-2">Question you wish to ask {item}</summary>
+            <p class="p-2 text-muted">
+                Answer: Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Neque totam quasi autem dignissimos nesciunt nostrum repellendus? Nostrum veniam, 
+                asperiores velit ea aperiam natus minus nemo, vitae odit labore atque culpa.
+            </p>
+        </details>)}
+    </aside>
+
+</section>

@@ -1,0 +1,36 @@
+---
+import Socials from "@components/tools/socials.astro";
+
+
+const h = [];
+---
+
+<section class="container my-4 py-4 mx-auto">
+
+    <h2 class="fw-bold py-4 my-3 text-center">Our Team</h2>
+
+
+    <ul class="list-unstyled row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2">
+
+        {[1,2,3,4].map( item => <li class="col">
+
+            <div class="position-relative hoverable">
+
+                <img height="280px" class="object-fit-fill rounded-2 w-100" src="https://placehold.net/600x600.png" alt="" />
+
+                <div class="hover-show position-absolute top-0 end-0 p-2 d-flex flex-column">
+                    <Socials />
+                </div>
+
+                <div class="mx-auto w-100 p-3">
+                    <strong class="fs-5 fw-bold">Mr. Name</strong>
+                    <div class="mb-2">Team ROle</div>
+                </div>
+
+            </div>
+
+
+        </li>)}
+    </ul>
+
+</section>

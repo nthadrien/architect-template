@@ -1,0 +1,52 @@
+
+---
+
+interface Props {
+    pgTitle?: string;
+    img?: string;
+    subtext?: string;
+    text?: string;
+    center_text?: boolean;
+}
+
+const { 
+    pgTitle = "Page Title Written in bold here" , 
+    img="/pages/header-1.webp" , 
+    subtext = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nihil nesciunt quaerat numquam? Impedit quo aliquid ab tempora alias.",
+    text,
+    center_text = false
+} = Astro.props;
+
+---
+
+<header id="header" style={`background-image: url(${img});`} class="bg-dark bg-opacity-75 text-white container-fluid p-3">
+
+    <section class="container d-flex flex-column g-2 align-items-center justify-content-center mx-auto h-100 position-relative">
+
+
+        <div class={`${ center_text && "text-center"} text-uppercase fw-bold font-serif display-5 col-9 col-md-7 col-lg-6 mt-auto`}>{pgTitle}</div>
+        <p class={`mt-2 ${center_text && "text-center"}`}>{text}</p>
+
+        {subtext && <div class="col-8 col-md-5 mt-auto ms-md-auto small">
+            <div class="col-1 my-3">_________</div>
+            <p>{subtext}</p>
+        </div>}
+
+
+    </section>
+
+</header>
+
+<style define:vars={{ img }}>
+
+    #header {
+        height: min( 450px, 40vh );
+        /* background: gray url(var(--img)) no-repeat; */
+        /* background-image: var(--img); */
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(100%);
+        background-blend-mode:multiply;
+        /* mix-blend-mode: darken; */
+    }
+</style>

@@ -1,0 +1,157 @@
+---
+import Testimonials from "@components/sections/Testimonials.astro";
+import Partners from "@components/sections/Partners.astro";
+import Team from "@components/sections/Team.astro";
+
+import Layout from "@layouts/Layout.astro";
+import { available_languages } from "@locale/utils";
+import type { GetStaticPaths } from "astro";
+import IndexHeader from "@components/headers/IndexHeader.astro";
+
+export const getStaticPaths = (() => {
+    const locales = available_languages
+
+    return locales.map( locale => ({
+        params: { locale }
+    }));
+}) satisfies GetStaticPaths; 
+
+const page_seo = {
+	title: "about-us",
+	description: "template",
+	keywords: ["architect","template"]
+}
+
+
+const core_principles = [
+    { name : "Committed", desc:"The road of success is always under construction"},
+    { name : "Sustainability" , desc: "We design for the future. Our projects prioritize energy efficiency, sustainable materials, and longevity."},
+    { name : "Context", desc :" Every building belongs somewhere. We analyze the light, landscape, and culture of the site before drawing a single line."},
+    { name :"Transparency", desc : "We demystify the construction process. Our clients are involved partners, kept informed from concept to completion."}
+]
+---
+
+<Layout {...page_seo}>
+
+    <IndexHeader
+        pgTitle="ABout Us"
+        center_text={true}
+        text="Qaulity comes first."
+    />
+
+    <section class="container mx-auto row row-cols-md-2 py-4 align-items-center">
+
+        <aside class="col-md-6 position-relative">
+            <button class="btn bg-body bi bi-play position-absolute top-50 start-50 translate-middle">
+
+            </button>
+            <img style="max-height: 490px;" loading="eager" class="object-fit-cover rounded-2 w-100" src="/pages/about-us.png" alt="">
+        </aside>
+
+        <aside class="col-md-6 row">
+
+            <h3 class="col-lg-12 fw-bold mb-3">
+                Design Consult Architect Was established in [Year] with a simple mission: 
+            </h3>
+
+            <hr class="col-2 col-lg-1 border-2">
+
+            <div class="col-lg-11 text-justify">
+                
+               <p class="lead text-primary"> 
+                    <i class="bi bi-quote fw-2"/> To create architecture that respects its environment while pushing the boundaries of modern design. <i class="bi bi-quote fw-2"/> 
+               </p>
+
+                <p class="mb-4">
+                    What started as a small residential studio has grown into a multidisciplinary firm serving clients across [Region/Country]. 
+                    Despite our growth, we remain hands-on. We believe that great design requires close collaboration between the architect, 
+                    the client, and the builder.
+                </p>
+
+                <a class="link-offset-3 btn btn-outline-secondary my-4 rounded-pill" href="#">
+                    Our Services <i class="btn btn-sm bg-white rounded-circle bi bi-chevron-right ms-4" />
+                </a>
+
+            </div>
+
+
+        </aside>
+
+    </section>
+
+    <section class="container mx-auto py-3 my-4">
+
+        <h3 class="text-center py-3 my-4">How we work</h3>
+        <p class="col-lg-8 mx-lg-auto">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo a atque, reiciendis in rem, nulla dignissimos 
+            commodi doloribus voluptatem, unde aut reprehenderit nesciunt illo libero autem sit quam non expedita.
+        </p>
+
+        <aside style="min-height: 360px;" class="col-lg-8 mx-auto position-relative overflow-hidden">
+
+            <img style="max-height: 490px;" loading="eager" class="object-fit-cover rounded-3 w-100" src="/pages/about-us.png" alt="">
+
+            <button class="position-absolute btn btn-light rounded-circle top-50 start-50 translate-middle">
+                <i class="bi bi-play" />
+            </button>
+
+        </aside>
+
+    </section>
+
+    <section class="container mx-auto py-4 my-4">
+
+        <h2 class="my-3 fw-bold">Core Principles</h2>
+
+        <hr class="mb-4 translate-middle-x" />
+
+
+        <ul class="list-unstyled row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 justify-content-lg-center p-2">
+
+            {core_principles.map( (item,i) => <li class="col border-start">
+                <div class="display-5">0{i+1}</div>
+                <h3 class="font-monospace fw-bold text-uppercase text-secondary">{item.name}</h3>
+                <p class="small">{item.desc}</p>
+            </li> )}
+
+        </ul>
+
+    </section>
+
+    <section class="container mx-auto py-4 my-3 row g-3">
+
+
+        <div class="col-lg-5">
+
+            <small>why us?</small>
+
+            <div class="container mx-auto section-header py-4">
+                <h2 class="fw-bold"> We listen to your needs, budget, and vision. </h2>
+                <small class="display-2 fw-bold text-border">Why Us?</small>
+            </div>
+
+        </div>
+
+        <aside class="col-lg-7">
+            <p>
+                Over the past [4years] we have worked with all range of customers .....and Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni omnis obcaecati amet, ipsa dicta quam dolorem, harum velit placeat tenetur, nostrum expedita nemo officia excepturi quis ullam! Debitis, veritatis earum.
+            </p>
+
+            <ul class="row row-cols-2 row-cols-lg-4 list-unstyled g-2">
+                {["architects","private projects","public projects"].map( (item,i) => <li>
+                    <div class="display-5">+0{i+1}</div>
+                    <p class="font-monospace fw-semibold text-uppercase">{item}</p>
+                </li> )}
+            </ul>
+
+        </aside>
+
+    </section>
+
+    <Team />
+ 
+    <Partners />
+
+    <Testimonials />
+    
+</Layout>

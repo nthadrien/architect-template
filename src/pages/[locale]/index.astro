@@ -1,0 +1,192 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { available_languages } from "@locale/utils";
+import type { GetStaticPaths } from "astro";
+
+import IndexHeader from "@components/headers/IndexHeader.astro";
+import Testimonials from "@components/sections/Testimonials.astro";
+import Faq from "@components/sections/Faq.astro";
+import Partners from "@components/sections/Partners.astro";
+import ProjectCard from "@components/cards/ProjectCard.astro";
+import BlogCard from "@components/cards/BlogCard.astro";
+
+export const getStaticPaths = (() => {
+    const locales = available_languages
+
+    return locales.map( locale => ({
+        params: { locale }
+    }));
+}) satisfies GetStaticPaths; 
+
+const page_seo = {
+	title: "home",
+	description: "template",
+	keywords: ["architect","template"],
+    sidebar: false
+}
+
+const our_services  =  [
+    { name : "Architectural Design", desc : "Comprehensive planning and design for new constructions."},
+    { name : "Interior Architecture", desc : "Curating internal spaces that flow seamlessly with the exterior."},
+    { name : "Urban Planning",   desc : "Large-scale development and community spatial planning."},
+    { name : "Sustainable Consulting" , desc : "LEED certification and eco-friendly material sourcing."}
+];
+
+---
+
+<Layout {...page_seo}>
+
+    <IndexHeader 
+        pgTitle="Experienced and trusted Architects"
+        text="You won't find better."
+    />
+
+    <section class="container mx-auto py-5 row g-4 align-items-center justify-content-between my-5">
+
+        <aside class="col-lg-4">
+
+
+            <small class="text-primary">We create architecture</small>
+
+            <h2 class="mb-2 display-6 fw-bold text-uppercase">
+                A level Above architecture
+            </h2>
+
+            <hr class="col-10 translate-middle-x start-100 mb-5" />
+
+            <p class="mb-4">
+                it is the backdrop of human experience. 
+                Founded in [Year], our studio bridges the gap between artistic vision and practical functionality. 
+                Whether it is a private residence or a commercial complex, 
+                we approach every project with a commitment to innovation, sustainability, and timeless aesthetics.
+            </p>
+
+            <a class="text-primary icon-link icon-link-hover">
+                About Us <i class="bi bi-arrow-right-short mb-2" />
+            </a>
+
+        </aside>
+
+        <div  class="col-lg-7">
+            <img style="min-height: 420px;" class="object-fit-cover rounded w-100" src="/pages/house1.p.png" alt="">
+        </div>
+    </section>
+
+
+    <div class="bg-body-tertiary py-5 my-5">
+
+        <section class="container-xl mx-auto row py-5 my-4 px-2 justify-content-between">
+
+            <aside class="col-12 col-lg-6">
+
+                <div class="accordion accordion-flush" id="accordionFlushServices">
+
+                   {our_services.map( (item,i) => <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold text-uppercase fw-monospace bg-body-tertiary" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse${i}`} aria-expanded="false" aria-controls={`flush-collapse${i}`}>
+                          {item.name}
+                        </button>
+                      </h2>
+                      <div id={`flush-collapse${i}`} class="accordion-collapse collapse bg-body-tertiary" data-bs-parent="#accordionFlushServices">
+
+                        <div class="p-3 py-4 text-muted d-flex justify-content-evenly gap-3">
+
+                            <img class="w-25" src="/public/pages/sketch4.png" alt="" />
+
+                            <div>
+                                <p class="mb-3">{item.desc}. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima possimus doloribus reprehenderit labore, ipsa esse culpa rerum perferendis maxime deserunt aspernatur nihil nesciunt! Quo, quibusdam veniam culpa corrupti consequuntur tenetur.</p>
+
+                                <a class="icon-link icon-link-hover text-primary" href="/en/services">
+                                    Learn more <i class="bi bi-arrow-right-short mb-1" />
+                                </a>
+                            </div>
+
+                        </div>
+                      </div>
+
+                    </div>)}
+                    
+                  </div>
+
+            </aside>
+
+
+            <aside class="col-12 col-lg-4">
+
+                <h2 class="fw-bold mb-2 font-monospace">SERVICES</h2>
+
+                <hr class="col-12 mb-5 -start-100"/>
+
+                <p class="mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Fugit cumque numquam praesentium illo itaque, eaque veniam consequuntur 
+                    natus adipisci iure incidunt iste, 
+                    magni exercitationem iusto? Ipsum optio corporis accusantium sapiente!
+                </p>
+            </aside>
+
+        </section>
+        
+    </div>
+
+    <section class="container mx-auto py-4 my-4 px-2">
+
+        <div class="py-3 mb-3 row justify-content-between align-items-center g-3 my-4 mx-auto">
+
+            <h2 class="col-md-6 mb-4">Recent Projects</h2>
+
+            <div class="col-md-6 mb-4">
+                Earum maxime non perspiciatis Lorem ipsum dolor, 
+                sit amet consectetur adipisicing elit. voluptate temporibus cum, 
+                libero cupiditate ducimus? Debitis cum a beatae alias, 
+                eligendi placeat atque provident nesciunt incidunt hic.
+            </div>
+
+        </div>
+
+        <ul class="row g-3 list-unstyled mb-4 mx-auto">
+            {[1,2,3].map( item => <li class="col-6 col-md-4 h-100"> 
+                <ProjectCard />
+           </li>)}
+        </ul>
+
+        <aside class="nav justify-content-center align-items-center gap-2 mx-auto py-4 mb-4">
+            
+            <button class="btn btn-dark btn-lg rounded-pill">
+                See more <i class="bi bi-arrow-right"/>
+            </button>
+
+        </aside>
+
+    </section>
+
+
+    <section class="py-4 my-5 container">
+
+
+        <aside class="nav justify-content-between align-items-center gap-4 py-4 mx-auto">
+            <h2 class="mb-4">Latest Posts</h2>
+
+            <a  class="icon-link icon-link-hover" href="/en/blog">
+                See more <i class="bi bi-arrow-right mb-1"/>
+            </a>
+        </aside>
+
+
+        <ul class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-3 list-unstyled mx-auto">
+
+            {[1,2,3].map( item => <li class="col mb-3">
+                <BlogCard />
+            </li>)}
+
+        </ul>
+
+    </section>
+
+    <Testimonials />
+
+    <Partners />
+
+    <Faq />
+
+</Layout>

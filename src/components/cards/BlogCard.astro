@@ -1,0 +1,30 @@
+---
+
+const {
+    img = true
+} = Astro.props
+---
+<div style="max-width: 360px;">
+    
+    {img && <img loading="lazy" style="height: auto;" class="w-100 mb-3" src="/pages/house2.png" alt="img" />
+}
+    <div class="nav justify-content-between gap-2 opacity-50 mb-2 text-md">
+        <span>Read time 2 mins</span>
+        <span>June 2026</span>
+    </div>
+
+    <h5 class="float-none mb-3 fw-bolder">Reinnovations of the national museum of foumban</h5>
+
+    <p class="text-muted small">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident totam, 
+        sed earum veritatis fuga dolore porro alias
+
+    </p>
+
+
+    <a href="/en/blog/showcase" class="w-auto fw-semibold text-primary border-dark">
+        Read more
+    </a>
+
+
+</div>

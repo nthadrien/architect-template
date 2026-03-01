@@ -1,0 +1,164 @@
+---
+import Newsletter from "@components/forms/Newsletter.astro";
+import Layout from "./Layout.astro";
+import IndexHeader from "@components/headers/IndexHeader.astro";
+
+interface Props {
+    title: string;
+	description: string;
+	keywords: string[];
+    img: string;
+    text: string;
+    subtext: string;
+}
+
+const {
+	title,
+	description,
+	keywords,
+    img,
+    text,
+    subtext,
+} = Astro.props;
+
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+
+    <IndexHeader
+        pgTitle={title}
+        img={img}
+        subtext={subtext}
+        text={text}
+        center_text={true}
+    />
+
+    <section class="container-lg py-4 row g-3 justify-content-between mx-auto my-5">
+
+        
+
+        <main class="col-lg-8">
+            <slot />
+        </main>
+
+
+        <aside class="col-lg-4">
+
+            <div class="p-2 pt-4 nav align-items-center gap-2 mb-3">
+
+                <h4>Tags</h4> : {[1,2,3,4].map( item => <a class="text-danger">#tag{item}</a> )}
+            </div>
+
+
+            <div class="px-2 py-4 sticky-top top-0">
+
+                <h3 class="d-none d-md-block mb-3 fw-bold font-monospace">
+                    <i class="bi bi-card-list me-2" />  Table Of Contents
+                </h3>
+
+                <ul class="d-none d-md-flex ps-3 border-start border-3 flex-column gap-3 fw-semibold fs-5 list-unstyled py-4">
+                    <li class="nav-item">heading 1</li>
+                    <li class="nav-item">
+                        heading 2
+
+                        <ul class="ps-3 my-3 list-unstyled">
+                            <li class="nav-item">Subhaeding 1</li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+                <div class="text-bg-secondary bg-gradient p-3 border rounded-2 mb-3">
+                    <Newsletter />
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="col-lg-7">
+
+            <h3 class="mb-5 fw-normale">12 Comments</h3>
+    
+    
+            <ul class="nav flex-column gap-2 mb-4">
+                {[1,2,3,4].map( item => <li class="p-2 d-flex gap-2">
+    
+                    <img height="48" width="48" src="" class="rounded-cirlce object-fit-scale flex-shrink-0" alt="" />
+    
+                    <div>
+                        <h4 class="fw-bold">John Doe</h4>
+                        <p class="fw-light opacity-50 font-monospace">JAN 8, 2026 At 12:76 AM</p>
+    
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Aut laboriosam labore, nam tempore cupiditate molestiae autem optio, 
+                            harum voluptatem nulla distinctio asperiores praesentium 
+                            voluptate dolorem dolorum ut ipsam dignissimos natus!
+                        </p>
+    
+                        <button class="btn bg-body-tertiary">
+                            REPLY
+                        </button>
+    
+                    </div>
+    
+                </li>)}
+            </ul>
+            
+        </div>
+
+
+        <aside class="col-lg-4 ">
+
+            <form class="row g-3 p-3 rounded-3" action="">
+
+                <h3>Leave a Comment</h3>
+    
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="email">
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+    
+    
+                <div class="col-12">
+                    <button class="btn btn-primary">
+                        POST COMMENT
+                    </button>
+                </div>
+            </form>
+
+        </aside>
+
+        
+
+    </section>
+
+
+   
+
+</Layout>
+
+
+<style is:global>
+    #content {
+        img {
+            height: auto;
+            width: 100%;
+            object-fit: contain;
+            border-radius: .4rem;
+        }
+    }
+</style>
