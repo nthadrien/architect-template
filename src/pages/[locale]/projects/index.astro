@@ -52,7 +52,7 @@ const page_seo = {
 
     </nav>
 
-    <ul class="container nav nav-pills my-4 py-4 px-2 mx-auto">
+    <ul class="container nav nav-pills my-4 py-4 px-2 mx-auto text-md">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Architecture</a>
         </li>
@@ -68,44 +68,18 @@ const page_seo = {
     </ul>
 
 
+    <section class="container mx-auto">
 
-    <div class="container mx-auto row g-2" style="position: relative;"> 
+        <div class="row g-3" style="position: relative;"> 
 
-        <div class="col-sm-6 col-lg-4">
-            <ProjectCard />
+            {[1,2,3,4,5,6].map(item => <div class="col-sm-6 col-lg-4">
+                <ProjectCard />
+            </div>)}
         </div>
 
+    </section>
 
-        <div class="col-sm-6 col-lg-4">
-            <ProjectCard />
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-            <ProjectCard />
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-            <ProjectCard />
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-            <ProjectCard />
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-            <ProjectCard />
-        </div>
-
-        <div class="col-sm-6 col-lg-4">
-            <ProjectCard />
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4">
-            <ProjectCard />
-        </div>
-
-    <section class="container my-3 py-3 nav justify-content-between mx-auto">
+    <section class="container my-5 py-4 nav justify-content-between mx-auto">
 
         <button class="btn btn-sm btn-outline-secondary">Prev</button>
 

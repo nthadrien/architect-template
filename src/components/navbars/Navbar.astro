@@ -43,9 +43,10 @@ import Brand from "@components/Brand.astro";
 
 
 
-<nav class="navbar navbar-expand-lg fixed-top top-0 bg-body"> 
+<nav style="z-index: 2; top: .8rem;" class="container-fluid navbar-expand-lg position-absolute py-4"> 
 
-    <div class="container-xl"> 
+
+    <div class="container-xl nav justify-content-between text-white "> 
         
         <Brand />    
 
@@ -56,7 +57,7 @@ import Brand from "@components/Brand.astro";
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
 
-            <div class="offcanvas-body gap-2">
+            <div class="offcanvas-body gap-2 text-white">
 
                 <section class="navbar-nav align-items-md-center justify-content-lg-end flex-grow-1 gap-3 gap-lg-4 text-capitalize p-3 p-md-1 px-lg-4">
                     
@@ -76,13 +77,12 @@ import Brand from "@components/Brand.astro";
         <aside class="d-flex gap-2 align-items-center">
 
             <a href="/en/contact-us" class="fw-bold btn btn-primary">
-                <i class="bi bi-telephone-fill" /> 
-                
+                <i class="d-lg-none bi bi-telephone-fill" /> 
+                <span class="d-none d-lg-inline">Contact Us</span>
             </a>
-
             
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
-                <span class="navbar-toggler-icon"></span>
+            <button class="d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
+                <span class="navbar-toggler-icon text-white"></span>
             </button>
             
        </aside>

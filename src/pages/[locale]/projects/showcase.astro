@@ -1,5 +1,6 @@
 ---
 import Newsletter from "@components/forms/Newsletter.astro";
+import IndexHeader from "@components/headers/IndexHeader.astro";
 import Layout from "@layouts/Layout.astro";
 import { available_languages } from "@locale/utils";
 import type { GetStaticPaths } from "astro";
@@ -21,92 +22,89 @@ const page_seo = {
 
 <Layout {...page_seo}>
 
-    <header class="conatiner d-flex justify-content-between gap-2 text-muted font-monospace mb-2">
-           
-        <div class="container mx-auto section-header py-4 px-3 my-4">
-            <h2 class="fw-bold">Project</h2>
-            <small class="display-2 fw-bold text-border">ID: UUID -678sd90</small>
-        </div>
+    <IndexHeader 
+        pgTitle={page_seo.title}
+        text={"| " + page_seo.description}
+        subtext={page_seo.keywords.toLocaleString()}
+        center_text={true}
+    />
 
-        <span>
-            <button class="btn btn-sm bi bi-share-fill" id="share"></button>
-        </span>
-    </header>
 
-    <h2 class="container fw-bold">
-        BIG BOLD BLOG TITLE FOR THIS SECTION WITH A LOT OF TEXT
-    </h2>
+    <main class="container mx-auto row g-3 py-4 my-4">
 
-    <header class="container mx-auto">
+        <section class="row row-cols-1 row-cols-md-2 g-3">
 
-        <img style="max-height: 540px;" class="w-100" src="/public/pages/house4.png" alt="">
+            <div class="col">
+                <h2 class="fw-bold mb-2 font-monospace">Description</h2>
 
-        <div class="mt-1">
-            {["/pages/house2.png","/pages/house1.p.png","/pages/house1.webp","/pages/house3.png","/pages/house4.png"].map( item => 
-                <img height="64" class="col-2 object-fit-cover" src={item} /> 
-            )}
-            <div class="col-2 text-bg-dark text-md"> 3d and others</div>
-        </div>
+                <hr class="col-8 mb-5 translate-middle-x start-25"/>
 
-    </header>
-
-    <main class="container row g-3 justify-content-center mx-auto">
-
-        <section class="col-lg-7 py-4">
-
-            <ul class="nav flex-column gap-1">
-                {["materials","location","duration","objectives"].map(item => <li class="row g-2 border-bottom align-items-center">
-    
-                    <h6 class="fw-bold col-lg-4 text-capitalize">{item}</h6>
-    
-                    <div class="col-lg-8 lh-sm">
-                        {[1,2,3].map( item => <p class="small"><i class="bi bi-check"/> onsequatur repudiandae aliquid fugiat quaerat soluta laborum nemo placeat?</p>)}
-                    </div>
-    
-                </li>)}
-            </ul>
-    
-    
-            <section class="py-4">
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum animi laborum aperiam, earum amet,
-                    ab deserunt quas blanditiis veniam ex rem accusantium ad voluptatum, suscipit ut. Illo repudiandae labore harum?
+                <p class="mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Fugit cumque numquam praesentium illo itaque, eaque veniam consequuntur 
+                    natus adipisci iure incidunt iste, 
+                    magni exercitationem iusto? Ipsum optio corporis accusantium sapiente!
                 </p>
-        
-                <h1> Illo repudiandae labore harum?</h1>
-        
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum animi laborum aperiam, earum amet,
-                    ab deserunt quas blanditiis veniam ex rem accusantium ad voluptatum, suscipit ut. Illo repudiandae labore harum?
-                </p>
-        
-                <p>
-                    Blanditiis veniam ex rem accusantium ad voluptatum, suscipit ut. Illo repudiandae labore harum?
-                </p>
-            </section>
+
+                <ul>
+                    {[1,2,3,4].map( item => <li>
+                        Fatus adipisci iure incidunt iste, 
+                    </li>)}
+                </ul>
+
+            </div>
+
+
+            <div class="col">
+                <h4>Illustrations</h4>
+
+                <div class="row row-cols-2">
+                    <img src="/public/pages/plan-1.jpg" />
+                    <img src="/public/pages/house5.png" />
+                    <img src="/public/pages/house3.png" />
+                    <img src="/public/pages/plan-1.jpg" />
+                </div>
+
+            </div>
+
         </section>
 
-        <section class="col-lg-4 py-4">
+        <ul class="row justify-content-evenly list-unstyled my-5 g-4">
 
-            <div class="rounded-3 border p-3 mb-2">
-                <Newsletter />
-            </div>
-    
-            <div class="rounded-3 border p-3">
-                <h5>Book a Call</h5>
-            </div>
-    
-            <div class="p-3">
-                see recent projects <i class="bi bi-arrow-right" />
-            </div>
-    
+            <li class="col-auto text-muted">
+                <h4>Client</h4>
+                company
+            </li>
+
+            <li class="col-auto text-muted">
+                <h4>Type / Tag</h4>
+                Constuction / Design <br/> / Reinnovation
+            </li>
+
+            <li class="col-auto text-muted">
+                <h4>Started</h4>
+                24 FEB 2022
+            </li>
+
+            <li class="col-auto text-muted">
+                <h4>Ended</h4>
+                20 OCT 2022
+            </li>
+
+        </ul>
+
+
+        <section>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Pariatur necessitatibus commodi maiores accusamus doloribus. 
+                Accusantium obcaecati commodi exercitationem minus animi consectetur autem atque. Alias nesciunt ullam temporibus ratione aliquam non.
+            </p>
         </section>
 
     </main>
 
-    
 
-    
 
    
 
